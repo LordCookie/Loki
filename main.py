@@ -1,6 +1,5 @@
 import asyncio as asyncio
 import discord
-import invoke as invoke
 from discord import Game, Server, Member, Embed
 
 import SECRETS
