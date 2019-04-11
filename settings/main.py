@@ -1,5 +1,6 @@
 import asyncio as asyncio
 import discord
+import feedparser
 from discord import Game, Embed
 from discord.ext.commands import bot
 
