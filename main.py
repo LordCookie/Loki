@@ -46,6 +46,11 @@ def on_message(message):
 @asyncio.coroutine
 def on_member_join(member):
     yield from client.send_message(member, "Welcome %s\nin this Paradies full of naughty things.\n\nDon't fap too much" % (member.name))
+    role = cmd_autorole.get(member.server)
+    if not role == None:
+        yield from client.add_roles(member, role)
+        yield from client.send_message(member, "Hey I tought you look Like an " + role.name + "!!")
+
 
 
 client.run(SECRETS.TOKEN)
