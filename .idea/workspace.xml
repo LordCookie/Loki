@@ -14,8 +14,35 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/settings/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="20">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SECRETS.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/settings/SECRETS.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="68" lean-forward="true" selection-start-column="9" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cmd_help.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commands/cmd_help.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="62" selection-start-line="6" selection-start-column="62" selection-end-line="6" selection-end-column="62" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cmd_ping.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/commands/cmd_ping.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -65,7 +92,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
+    <option name="x" value="140" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -82,6 +109,25 @@
             <path>
               <item name="Loki" type="b2602c69:ProjectViewProjectNode" />
               <item name="Loki" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Loki" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loki" type="462c0819:PsiDirectoryNode" />
+              <item name="commands" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Loki" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Loki" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Loki" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="Loki" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; Python 3.6 &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
@@ -166,13 +212,13 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48039216" visible="true" weight="0.16491044" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4738562" visible="true" weight="0.16491044" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.19968387" side_tool="true" weight="0.32897604" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32897604" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.8003161" weight="0.32897604" />
-      <window_info id="Structure" order="1" sideWeight="0.51960784" side_tool="true" visible="true" weight="0.16491044" />
+      <window_info id="Structure" order="1" sideWeight="0.5261438" side_tool="true" visible="true" weight="0.16491044" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -441,8 +487,13 @@
     <entry file="file://$PROJECT_DIR$/commands/__init__.py" />
     <entry file="file://$PROJECT_DIR$/commands/cmd_ping.py" />
     <entry file="file://$PROJECT_DIR$/commands/ping.py" />
+    <entry file="file://$PROJECT_DIR$/commands/cmd_kill.py" />
     <entry file="file://$PROJECT_DIR$/settings/SECRETS.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="68" lean-forward="true" selection-start-column="9" selection-end-column="68" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/commands/cmd_help.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -451,11 +502,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/commands/cmd_kill.py" />
     <entry file="file://$PROJECT_DIR$/commands/cmd_ping.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="71" selection-start-line="6" selection-start-column="71" selection-end-line="6" selection-end-column="71" />
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -468,8 +518,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/settings/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="20">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
