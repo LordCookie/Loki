@@ -6,7 +6,8 @@ from discord.ext.commands import bot
 
 from settings import SECRETS, STATICS
 from commands import cmd_ping
-from commands import  cmd_help
+from commands import cmd_help
+from commands import cmd_autorole
 
 client = discord.Client()
 
@@ -14,6 +15,8 @@ commands = {
 
     "ping": cmd_ping,
     "help": cmd_help,
+    "autorole": cmd_autorole,
+
 }
 
 
@@ -28,11 +31,12 @@ def on_ready():
 @client.event
 @asyncio.coroutine
 def on_message(message):
-    print(message.content + " - " + message.author.name)
+    print("'" + message.content + "'" + " From : " + message.author.name)
     if message.content.startswith(STATICS.PREFIX):
         invoke = message.content[len(STATICS.PREFIX):].split(" ")[0]
         args = message.content.split(" ")[1:]
         print("INVOKE: %s\nARGS: %s" % (invoke, args.__str__()[1:-1].replace("'", "")))
+        print("Command" + "..." + "was executet sucsessfully.")
         if commands.__contains__(invoke):
             yield from commands.get(invoke).ex(args, message, client, invoke)
         else:

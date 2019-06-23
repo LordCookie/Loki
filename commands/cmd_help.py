@@ -4,4 +4,4 @@ def ex(args, message, client, invoke):
     args_out = ""
     if len(args) > 0:
         args_out = "\n\n*Attached arguments: %s*" % args.__str__()[1:-1].replace("'", "")
-    yield from client.send_message(message.channel, "Not mutch at the momant" + args_out)
+    yield from client.send_message(message.channel, "Not much at the moment" + args_out)
