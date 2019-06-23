@@ -1,6 +1,5 @@
 import asyncio as asyncio
 import discord
-import feedparser
 from discord import Game, Embed
 from discord.ext.commands import bot
 
@@ -49,8 +48,11 @@ def on_member_join(member):
     role = cmd_autorole.get(member.server)
     if not role == None:
         yield from client.add_roles(member, role)
-        yield from client.send_message(member, "Hey I tought you look Like an " + role.name + "!!")
-
+        try:
+            yield from client.send_message(member, "Hey I tought you look Like an " + role.name + "!!")
+        except Exception:
+            yield from client.send_message(member, "You have no Role!")
+            raise Exception
 
 
 client.run(SECRETS.TOKEN)
