@@ -3,8 +3,8 @@ from os import path
 
 import discord
 
-def error(content, channel, client):
-    yield from client.send_message(channel, embed=discord.Embed(color=discord.Color.red(), description=content))
+async def error(content, channel, client):
+    await client.send_message(channel, embed=discord.Embed(color=discord.Color.red(), description=content))
 
 def get(server):
     f = "server_settings/" + server.id + "autorole"
@@ -23,7 +23,7 @@ def saveFile(id, server):
         f.write(id)
         f.close()
 
-def ex(args, message, client, invoke):
+async def ex(args, message, client, invoke):
 
     print(args)
 
@@ -31,11 +31,11 @@ def ex(args, message, client, invoke):
         rolename = args.__str__()[1:-1].replace(",", "").replace("'", "")
         role = discord.utils.get(message.server.roles, name=rolename)
         if role == None:
-            yield from error("Hey coward .... can you please enter a Valid Role this annoy me \n\n\n .... Baka ^^", message.channel, client)
+            await error("Hey coward .... can you please enter a Valid Role this annoy me \n\n\n .... Baka ^^", message.channel, client)
         else:
             try:
                 saveFile(role.id, message.server)
-                yield from client.send_message(message.channel, embed=discord.Embed(color=discord.Color.green(), description=("Finally you made it( ︶︿︶) you are now a `%s`" % role.name)))
+                await client.send_message(message.channel, embed=discord.Embed(color=discord.Color.green(), description=("Finally you made it( ︶︿︶) you are now a `%s`" % role.name)))
             except Exception:
-                yield from error("WRONG .... Idiot", message.channel, client)
+                await error("WRONG .... Idiot", message.channel, client)
                 raise Exception

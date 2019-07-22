@@ -20,16 +20,14 @@ commands = {
 
 
 @client.event
-@asyncio.coroutine
-def on_ready():
+async def on_ready():
     print("Bot is logged in successfully. Running on servers:\n")
     for s in client.servers:
         print("  - %s (%s)" % (s.name, s.id))
-    yield from client.change_presence(game=Game(name="mit Nekos"))
+    await client.change_presence(game=Game(name="mit Nekos"))
 
 @client.event
-@asyncio.coroutine
-def on_message(message):
+async def on_message(message):
     print("'" + message.content + "'" + " From : " + message.author.name)
     if message.content.startswith(STATICS.PREFIX):
         invoke = message.content[len(STATICS.PREFIX):].split(" ")[0]
@@ -37,22 +35,22 @@ def on_message(message):
         print("INVOKE: %s\nARGS: %s" % (invoke, args.__str__()[1:-1].replace("'", "")))
         print("Command" + "..." + "was executet sucsessfully.")
         if commands.__contains__(invoke):
-            yield from commands.get(invoke).ex(args, message, client, invoke)
+            await commands.get(invoke).ex(args, message, client, invoke)
         else:
-            yield from client.send_message(message.channel, embed=Embed(color=discord.Color.red(), description="`%s` don't exist!" % invoke))
+            await client.send_message(message.channel, embed=Embed(color=discord.Color.red(), description="`%s` don't exist!" % invoke))
+
 
 @client.event
-@asyncio.coroutine
-def on_member_join(member):
-    yield from client.send_message(member, "Welcome %s\nin this Paradies full of naughty things.\n\nDon't fap too much" % (member.name))
+async def on_member_join(member):
+    await client.send_message(member, "Welcome %s\nin this Paradies full of naughty things.\n\nDon't fap too much" % (member.name))
     role = cmd_autorole.get(member.server)
-    if not role == None:
-        yield from client.add_roles(member, role)
+    if role is not None:
+        await client.add_roles(member, role)
         try:
-            yield from client.send_message(member, "Hey I tought you look Like an " + role.name + "!!")
+            await client.send_message(member, "Hey I tought you look Like an " + role.name + "!!")
         except Exception:
-            yield from client.send_message(member, "You have no Role!")
-            raise Exception
+           await client.send_message(member, "You have no Role!")
+           raise Exception
 
 
 client.run(SECRETS.TOKEN)
