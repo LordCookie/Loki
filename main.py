@@ -43,10 +43,14 @@ async def on_message(message):
 @client.event
 async def on_member_join(member):
     await client.send_message(member, "Welcome %s\nin this Paradies full of naughty things.\n\nDon't fap too much" % (member.name))
-    role = discord.utils.get(member.server.roles, name='Test')
+
+    #role = discord.utils.get(member.server.roles, id='592392234922672165')
+    role = cmd_autorole.get(member.server, id)                                                                    #idk müsste eigentlich so passen aber der hat wohl probleme beim übergeben der ID(rolen name)
     await client.add_roles(member, role)
-    #role = cmd_autorole.get(member.server)
-    """if role is not None:
+
+
+    """role = cmd_autorole.get(member.server)
+    if role is not None:
         await client.add_roles(member, role)
         try:
             await client.send_message(member, "Hey I tought you look Like an " + role.name + "!!")
