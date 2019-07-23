@@ -43,14 +43,17 @@ async def on_message(message):
 @client.event
 async def on_member_join(member):
     await client.send_message(member, "Welcome %s\nin this Paradies full of naughty things.\n\nDon't fap too much" % (member.name))
-    role = cmd_autorole.get(member.server)
-    if role is not None:
+    role = discord.utils.get(member.server.roles, name='Test')
+    await client.add_roles(member, role)
+    #role = cmd_autorole.get(member.server)
+    """if role is not None:
         await client.add_roles(member, role)
         try:
             await client.send_message(member, "Hey I tought you look Like an " + role.name + "!!")
         except Exception:
            await client.send_message(member, "You have no Role!")
-           raise Exception
+           raise Exception"""
+
 
 
 client.run(SECRETS.TOKEN)
